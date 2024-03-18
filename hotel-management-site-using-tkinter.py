@@ -1,0 +1,27 @@
+import tkinter
+from tkinter import *
+from tkinter import PhotoImage
+win = tkinter.Tk()
+win.title("Hotel Management")
+win.config(bg="white")
+win.geometry("500x600")
+win.resizable(False,False)
+image_path = PhotoImage(file=r"C:\Users\dassu\OneDrive\Desktop\workspace\python-tkinter-learning\images\welcome-image.png")
+bg_image = Label(win,image = image_path)
+bg_image.place(relheight = 1, relwidth = 1)
+text_label = tkinter.Label(win, text = 'Welcome to CoastBay Resort', font = ('Georgia',24,"italic"))
+text_label.pack()
+
+service_lbl = Label(win, text = "Services available", bg = "white", fg = "black", justify = "left", font = ("Georgia",10))
+service_lbl.place(x = 30, y = 100)
+cb1 = IntVar()
+cb2 = IntVar()
+Button1 = Checkbutton(win, text = "Roomservice",  justify = "left",variable = cb1, onvalue = 1, offvalue = 0,height = 1,width = 4)
+Button2 = Checkbutton(win, text = "Dine-In",  justify = "right",variable = cb2, onvalue = 1, offvalue = 0,height = 1,width = 4)
+Button1.place(x = 200, y = 100)
+Button2.place(x = 300, y = 100)
+menu_lbl = Label(win, text = "Choose exotic dishes from our curated menu!!!", bg = "white", fg = "black", justify = "left", font = ("Georgia",16))
+menu_lbl.place(x = 30, y = 200)
+Button3 = Button(win, text = "Click here",justify = "center")
+Button3.place(x = 200, y = 250)
+win.mainloop()
