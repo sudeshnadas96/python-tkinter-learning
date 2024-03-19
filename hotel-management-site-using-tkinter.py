@@ -3,7 +3,7 @@ import tkinter as tk
 from tkinter import *
 from tkinter import PhotoImage
 from tkinter import ttk
-def create_win():
+def ty():
     extra_win = tk.Toplevel()
     extra_win.title('order page')
     extra_win.geometry("300x300")
@@ -11,6 +11,45 @@ def create_win():
 
     Label(extra_win, text = "Thankyou for ordering", font = ('Georgia', 15)).place(x = 55, y = 150)
 
+def bf():
+    window = tk.Toplevel()
+    window.title('Our menu')
+    window.geometry("400x400")
+    window.resizable(False,False)
+     
+    Label(window, text = 'items', font = ('Georgia',20,"bold")).place(x = 150, y = 50)
+    
+    Button(window, text = 'bread-Egg-Fruit juice', font = ('Georgia',10),command=ty).place(x = 50, y = 100)
+    
+    Button(window, text = 'Dosa/Idli', font = ('Georgia',10),command=ty).place(x = 50, y = 150)
+
+    Button(window, text = 'Poha/Upma', font = ('Georgia',10),command=ty).place(x = 50, y = 200)
+def lun():
+    window = tk.Toplevel()
+    window.title('Our menu')
+    window.geometry("400x400")
+    window.resizable(False,False)
+     
+    Label(window, text = 'items', font = ('Georgia',20,"bold")).place(x = 150, y = 50)
+    
+    Button(window, text = 'NorthIndian-Thali', font = ('Georgia',10),command=ty).place(x = 50, y = 100)
+    
+    Button(window, text = 'SouthIndian-Thali', font = ('Georgia',10),command=ty).place(x = 50, y = 150)
+
+    Button(window, text = 'EastIndian-Thali', font = ('Georgia',10),command=ty).place(x = 50, y = 200)
+def din():
+    window = tk.Toplevel()
+    window.title('Our menu')
+    window.geometry("400x400")
+    window.resizable(False,False)
+     
+    Label(window, text = 'items', font = ('Georgia',20,"bold")).place(x = 150, y = 50)
+    
+    Button(window, text = 'Italian/Chinese', font = ('Georgia',10),command=ty).place(x = 50, y = 100)
+    
+    Button(window, text = 'Indian Cuisine', font = ('Georgia',10),command=ty).place(x = 50, y = 150)
+
+    Button(window, text = 'Korean/Japanese', font = ('Georgia',10),command=ty).place(x = 50, y = 200)
     
 def create_window():
     window = tk.Toplevel()
@@ -19,34 +58,14 @@ def create_window():
     window.resizable(False,False)
      
     Label(window, text = 'Dishes', font = ('Georgia',20,"bold")).place(x = 150, y = 50)
-    Label(window, text = 'Breakfast', font = ('Georgia',10)).place(x = 30, y = 100)
-    cb3 = IntVar()
-    cb4 = IntVar()
-    cb5 = IntVar()
-    Button4 = Checkbutton(window, text = "bread-Egg-fruitjuice",variable = cb3, onvalue = 1, offvalue = 0,height = 1)
-    Button4.place(x = 110, y = 100)
-    Button5 = Checkbutton(window, text = "Idli/Dosa",variable = cb4, onvalue = 1, offvalue = 0,height = 1)
-    Button5.place(x = 240, y = 100)
-    Button6 = Checkbutton(window, text = "Poha/Upma",variable = cb5, onvalue = 1, offvalue = 0,height = 1)
-    Button6.place(x = 309, y = 100)
     
-    Label(window, text = 'Lunch', font = ('Georgia',10)).place(x = 30, y = 150)
-    cb6 = IntVar()
-    cb7 = IntVar()
-    Button7 = Checkbutton(window, text = "NorthIndian-Thali",variable = cb6, onvalue = 1, offvalue = 0,height = 1)
-    Button7.place(x = 110, y = 150)
-    Button8 = Checkbutton(window, text = "SouthIndian-Thali",variable = cb7, onvalue = 1, offvalue = 0,height = 1)
-    Button8.place(x = 250, y = 150)
+    Button(window, text = 'Breakfast', font = ('Georgia',10),command=bf).place(x = 160, y = 100)
+    
+    Button(window, text = 'Lunch', font = ('Georgia',10),command=lun).place(x = 160, y = 150)
 
-    Label(window, text = 'Dinner', font = ('Georgia',10)).place(x = 30, y = 200)
-    cb8 = IntVar()
-    cb9 = IntVar()
-    Button9 = Checkbutton(window, text = "Italian/Chinese",variable = cb8, onvalue = 1, offvalue = 0,height = 1)
-    Button9.place(x = 110, y = 200)
-    Button10 = Checkbutton(window, text = "Indian cuisine",variable = cb9, onvalue = 1, offvalue = 0,height = 1)
-    Button10.place(x = 250, y = 200)
+    Button(window, text = 'Dinner', font = ('Georgia',10),command=din).place(x = 160, y = 200)
 
-    Button11 = Button(window, text = "Confirm your order", command = create_win)
+    Button11 = Button(window, text = "Confirm your order", command = ty)
     Button11.place(x = 150, y = 300)
     
     
