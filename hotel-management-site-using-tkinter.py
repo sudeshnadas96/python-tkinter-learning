@@ -3,54 +3,28 @@ import tkinter as tk
 from tkinter import *
 from tkinter import PhotoImage
 from tkinter import ttk
-def ty():
+def ty(last):
     extra_win = tk.Toplevel()
     extra_win.title('order page')
-    extra_win.geometry("300x300")
+    extra_win.geometry("600x300")
     extra_win.resizable(False,False)
 
-    Label(extra_win, text = "Thankyou for ordering", font = ('Georgia', 15)).place(x = 55, y = 150)
+    Label(extra_win, text = f"Thankyou for ordering \n {last} \n visit again", font = ('Georgia', 15)).place(x = 200, y = 100)
 
-def bf():
+def aaa(a,b,c,d):
     window = tk.Toplevel()
     window.title('Our menu')
     window.geometry("400x400")
     window.resizable(False,False)
      
-    Label(window, text = 'items', font = ('Georgia',20,"bold")).place(x = 150, y = 50)
+    Label(window, text = a, font = ('Georgia',20,"bold")).place(x = 150, y = 50)
     
-    Button(window, text = 'bread-Egg-Fruit juice', font = ('Georgia',10),command=ty).place(x = 50, y = 100)
+    Button(window, text = b, font = ('Georgia',10),command=lambda:ty(b)).place(x = 50, y = 100)
     
-    Button(window, text = 'Dosa/Idli', font = ('Georgia',10),command=ty).place(x = 50, y = 150)
+    Button(window, text = c, font = ('Georgia',10),command=lambda:ty(c)).place(x = 50, y = 150)
 
-    Button(window, text = 'Poha/Upma', font = ('Georgia',10),command=ty).place(x = 50, y = 200)
-def lun():
-    window = tk.Toplevel()
-    window.title('Our menu')
-    window.geometry("400x400")
-    window.resizable(False,False)
-     
-    Label(window, text = 'items', font = ('Georgia',20,"bold")).place(x = 150, y = 50)
-    
-    Button(window, text = 'NorthIndian-Thali', font = ('Georgia',10),command=ty).place(x = 50, y = 100)
-    
-    Button(window, text = 'SouthIndian-Thali', font = ('Georgia',10),command=ty).place(x = 50, y = 150)
+    Button(window, text = d, font = ('Georgia',10),command=lambda:ty(d)).place(x = 50, y = 200)
 
-    Button(window, text = 'EastIndian-Thali', font = ('Georgia',10),command=ty).place(x = 50, y = 200)
-def din():
-    window = tk.Toplevel()
-    window.title('Our menu')
-    window.geometry("400x400")
-    window.resizable(False,False)
-     
-    Label(window, text = 'items', font = ('Georgia',20,"bold")).place(x = 150, y = 50)
-    
-    Button(window, text = 'Italian/Chinese', font = ('Georgia',10),command=ty).place(x = 50, y = 100)
-    
-    Button(window, text = 'Indian Cuisine', font = ('Georgia',10),command=ty).place(x = 50, y = 150)
-
-    Button(window, text = 'Korean/Japanese', font = ('Georgia',10),command=ty).place(x = 50, y = 200)
-    
 def create_window():
     window = tk.Toplevel()
     window.title('Our menu')
@@ -59,14 +33,14 @@ def create_window():
      
     Label(window, text = 'Dishes', font = ('Georgia',20,"bold")).place(x = 150, y = 50)
     
-    Button(window, text = 'Breakfast', font = ('Georgia',10),command=bf).place(x = 160, y = 100)
+    Button(window, text = 'Breakfast', font = ('Georgia',10),command=lambda:aaa('breakfast-items','bread-egg-Fruitjuice','Dosa/idli','Poha/Upma')).place(x = 160, y = 100)
     
-    Button(window, text = 'Lunch', font = ('Georgia',10),command=lun).place(x = 160, y = 150)
+    Button(window, text = 'Lunch', font = ('Georgia',10),command = lambda:aaa('Lunch-items','NorthIndian-Thali','SouthIndian-Thali','EastIndian-Thali')).place(x = 160, y = 150)
 
-    Button(window, text = 'Dinner', font = ('Georgia',10),command=din).place(x = 160, y = 200)
+    Button(window, text = 'Dinner', font = ('Georgia',10),command = lambda:aaa('Dinner-Items','Italian/Chinese','Indian Cuisine','Korean/Japanese')).place(x = 160, y = 200)
 
-    Button11 = Button(window, text = "Confirm your order", command = ty)
-    Button11.place(x = 150, y = 300)
+##    Button4 = Button(window, text = "Confirm your order", command = ty)
+##    Button4.place(x = 150, y = 300)
     
     
     
@@ -95,7 +69,7 @@ Button1.place(x = 200, y = 100)
 Button2.place(x = 300, y = 100)
 menu_lbl = Label(win, text = "Choose exotic dishes from our curated menu!!!", bg = "white", fg = "black", justify = "left", font = ("Georgia",16))
 menu_lbl.place(x = 30, y = 200)
-Button3 = Button(win, text = "Click here", command = create_window)
+Button3 = Button(win, text = "Click here", command = lambda:create_window())
 Button3.place(x = 200, y = 250)
 
 win.mainloop()
